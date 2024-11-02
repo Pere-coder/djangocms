@@ -39,8 +39,6 @@ class BlogPage(Page):
         # Add this:
         InlinePanel('gallery_images', label="Gallery images"),
     ]
-
-
 class BlogPageGalleryImage(Orderable):
     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='gallery_images')
     image = models.ForeignKey(
@@ -52,3 +50,5 @@ class BlogPageGalleryImage(Orderable):
         FieldPanel('image'),
         FieldPanel('caption'),
     ]
+
+
